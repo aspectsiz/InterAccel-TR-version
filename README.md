@@ -2,23 +2,26 @@
 [![Screenshot 1](https://i.imgur.com/4vy7XYf.png)](https://github.com/KovaaK/InterAccel/releases/latest)
 # Interception Acceleration
 
-The included programs allow you to use QuakeLive style mouse acceleration across your entire OS and any game, regardless of whether the game uses RawInput, DirectInput, or whatever else.  It makes use of the [Interception Driver](http://www.oblita.com/interception.html) to capture mouse movements before they are sent to the OS and modify them according to the same math that QL performs.
+Bu program, QuakeLive tarzı fare hızlandırmasını, oyunun RawInput, DirectInput veya başka bir şey kullanıp kullanmadığına bakılmaksızın, işletim sistemi ve herhangi bir oyunda kullanmanıza olanak tanır. Fare hareketlerini işletim sistemine göndermeden önce yakalamak ve QL'nin yaptığı matematiğe göre değiştirmek için Interception Sürücüsünden yararlanır.
 
-To install, you need :
-1. Install the 'interception' driver by running 'install_driver.bat' from the "1. driver" folder (It will ask for Admin priviledges)
-2. Install the Visual C++ Redistributable for Visual Studio 2015 from 
-https://www.microsoft.com/en-us/download/details.aspx?id=48145 if you don't have it.
-3. Reboot.  Yes, you actually need to reboot because of first step, or it won't work.
+Yüklemek için gerekenler:
 
-Then after you've rebooted, you should be able to run it.  Go to one of the "application" folders and run interGUI.exe.  The program will run a configuration wizard to give you a starting point for mouse acceleration, but you are welcome to use whatever settings you prefer.
+1. "interception" klasöründen "install_driver.bat" dosyasını çalıştırarak "interception" sürücüsünü yükleyin (Yönetici ayrıcalıkları isteyecektir).
+2. Eğer yoksa, https://www.microsoft.com/tr-tr/download/details.aspx?id=48145 adresinden Visual Studio 2015 için Visual C++ Redistributable'ı yükleyin.
+3. Bilgisayarınızı Yeniden başlatın. Evet, gerçekten ilk adımdan dolayı yeniden başlatmanız gerekiyor, aksi takdirde çalışmaz.
 
-For the most comprehensive and up-to-date guide on this driver, see [N.R.K's GDoc](https://docs.google.com/document/d/1wuQln99lQVBU9L8_QbpifrarpJ1xjPuKsKD2FY026Hc/edit#)
+Yeniden başlatıldıktan sonra, bir "uygulama" klasörlerinden birine giderek interGUI.exe'yi çalıştırabilirsiniz. Program, fare hızlandırması için bir başlangıç noktası vermek için yapılandırma sihirbazını çalıştıracaktır, ancak tercih ettiğiniz herhangi bir ayarı kullanabilirsiniz.
 
-Important notes:
-- Interaccel.exe is the program that actually performs live mouse acceleration, and it only reads the configuration values when it is first run.
-- InterGUI.exe runs Interaccel.exe in the background and automatically closes/restarts it when you change configuration values.
-- If you close InterGUI.exe or Interaccel.exe, then *NO* mouse accel will be applied by the interception driver, and your input will be the same as if you didn't install the driver at all.
-- You can minimize InterGUI.exe to your system tray and it will still work.  You can also schedule the program to start automatically in Windows and add "-m" to the command line parameters to force it to start minimized.
-- There is a hidden setting called "FancyOutput" in settings.txt that when set to "1" can show the live sensitivity/acceleration output if you run interaccel.exe directly instead of using the GUI.  But it cases a small amount of input lag, so any time the GUI takes over it forces FancyOutput to 0.
+Bu sürücüyle ilgili en kapsamlı ve güncel kılavuz için N.R.K'nın GDoc'una bakın.
 
--povohat & KovaaK
+Önemli notlar:
+
+╚ Interaccel.exe, gerçek zamanlı fare hızlandırmasını gerçekleştiren programdır ve ilk kez çalıştırıldığında yapılandırma değerlerini yalnızca okur.
+
+╚ InterGUI.exe, Interaccel.exe'yi arka planda çalıştırır ve yapılandırma değerleri değiştirildiğinde otomatik olarak kapatır/yeniden başlatır.
+
+╚ InterGUI.exe veya Interaccel.exe'yi kapatırsanız, Interception sürücüsü tarafından HERHANGİ bir fare hızlandırması uygulanmaz ve girdileriniz sürücüyü yüklemediyseniz aynı olacaktır.
+
+╚ InterGUI.exe'yi görev çubuğuna küçültebilirsiniz ve çalışmaya devam eder. Ayrıca programı Windows'ta otomatik olarak başlayacak şekilde programlayabilir ve simge durumuna küçültülmüş şekilde başlamaya zorlamak için komut satırı parametrelerine "-m" ekleyebilirsiniz.
+
+╚ settings.txt dosyasında "FancyOutput" adlı gizli bir ayar vardır. "1" olarak ayarlandığında, interaccel.exe'yi doğrudan çalıştırırsanız gerçek zamanlı hassasiyet/hızlandırma çıktısını gösterebilir. Ancak az miktarda giriş gecikmesi oluşur, bu nedenle GUI her devraldığında FancyOutput'u 0'a zorlar.
